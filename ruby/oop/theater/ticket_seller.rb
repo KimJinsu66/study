@@ -2,7 +2,7 @@
 
 # Description/Explanation of TicketSeller class
 class TicketSeller
-  def self.set_ticket(audience)
+  def self.sell_to(audience)
     p "{test} #{audience}"
   end
 end

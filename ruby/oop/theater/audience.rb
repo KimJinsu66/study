@@ -4,7 +4,7 @@ require './bag'
 
 # Description/Explanation of Audience class
 class Audience
-  def set_ticket(ticket)
+  def buy(ticket)
     bag.setTicket(ticket)
   end
 end

@@ -10,7 +10,7 @@ class Bag
     @amount = amount
   end
 
-  def set_ticket(ticket)
+  def hold(ticket)
     if invitation?
       @ticket = ticket
     else
