@@ -45,3 +45,12 @@ class HourlyEmployee < Employees
     0
   end
 end
+
+def sum_of_base_pays
+  result = 0
+  for employee in $employees
+    result += employee.monthly_base_pay
+  end
+
+  p result
+end
