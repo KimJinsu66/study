@@ -7,16 +7,7 @@ class Phone < AbstractPhone
   def initialize(amount, seconds)
     @amount = amount
     @seconds = seconds
-    @calls = []
   end
 
-  def calculate_fee
-    result = 0
-
-    @calls.each do |call|
-      result += 1 # 修正する必要がある
-    end
-
-    result
-  end
+  def calculate_call_fee; end
 end
