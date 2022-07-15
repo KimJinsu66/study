@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Description/Explanation of Professor class
 class Professor
   def initialize(name, lecture)
     @name = name
@@ -5,6 +8,6 @@ class Professor
   end
 
   def compile_statistics
-    "Avg: #{@name}, #{@lecture.evaludate}, #{@lecture.average}"
+    "Professor: #{@name}, #{@lecture.evaluate}, Avg: #{@lecture.average}"
   end
 end
