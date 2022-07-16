@@ -1,4 +1,3 @@
-
 class Vehicle
   def tyre_type
     puts 'Heavy Car'
@@ -14,7 +13,6 @@ end
 # Using inheritance
 class Car < Vehicle
   def tyre_type
-    test
     puts 'Small Car'
   end
 end
@@ -39,6 +37,4 @@ vehicle = Truck.new
 vehicle.tyre_type
 
 # このように書いてコードを書かなくてもよくなる
-[Vehicle.new, Car.new, Truck.new].each do |vehicle|
-  vehicle.tyre_type
-end
+[Vehicle.new, Car.new, Truck.new].each(&:tyre_type)
