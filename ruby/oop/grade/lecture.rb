@@ -15,7 +15,7 @@ class Lecture
   end
 
   def average
+    p "average ?"
     scores.sum / scores.length
   end
-
 end
