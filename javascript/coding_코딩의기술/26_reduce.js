@@ -36,3 +36,18 @@ const colors = dogs.reduce((colors, dog) => {
 
   return [...colors, dog['color']]
 }, [])
+
+// redue장점
+
+const filters = dogs.reduce((filters, item) => {
+  filters.breed.add(item['name'])
+  filters.size.add(item['size'])
+  filters.color.add(item['color'])
+
+  return filters
+},
+{
+  breed: new Set(),
+  size: new Set(),
+  color: new Set()
+})
