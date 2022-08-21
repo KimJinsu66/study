@@ -91,7 +91,10 @@ end
 
 class Client
   def main
-    JinsuCafe.new.order('coffee')
+    jinsu_cafe = JinsuCafe.new
+
+    jinsu_cafe.order('coffee')
+    jinsu_cafe.order('tea')
   end
 end
 
