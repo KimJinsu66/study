@@ -1,4 +1,3 @@
-
 class JinsuCafe
   attr_accessor :kind
 
@@ -7,7 +6,6 @@ class JinsuCafe
   end
 
   def order(beverage_kind)
-    p "beverage_kind: #{beverage_kind}"
     @kind = beverage_kind
     make_beverage
 
@@ -17,7 +15,6 @@ class JinsuCafe
   private
 
   def make_beverage
-    p "kind: #{kind}"
     case kind
     when 'coffee'
       Coffee.new.prepare_recipe
@@ -42,7 +39,7 @@ class Beverage
   end
 
   def brew
-    p 'お茶をつくる'
+    raise '実装してください'
   end
 
   def pour_in_cup
@@ -50,11 +47,11 @@ class Beverage
   end
 
   def add_condiments
-   p  "レモンを追加する"
+    raise '実装してください'
   end
 end
 
-class Coffee
+class Coffee < Beverage
   def prepare_recipe
     boil_water
     brew
@@ -63,25 +60,17 @@ class Coffee
   end
 
   private
-
-  def boil_water
-    p '水をわかす'
-  end
 
   def brew
     p 'コーヒーをつくる'
   end
 
-  def pour_in_cup
-    p 'カップに入れる'
-  end
-
   def add_condiments
-   p  "砂糖を入れる"
+    p '砂糖を入れる'
   end
 end
 
-class Tea
+class Tea < Beverage
   def prepare_recipe
     boil_water
     brew
@@ -91,20 +80,12 @@ class Tea
 
   private
 
-  def boil_water
-    p '水をわかす'
-  end
-
   def brew
     p 'お茶をつくる'
   end
 
-  def pour_in_cup
-    p 'カップに入れる'
-  end
-
   def add_condiments
-   p  "レモンを追加する"
+    p 'レモンを追加する'
   end
 end
 
