@@ -52,13 +52,6 @@ class Beverage
 end
 
 class Coffee < Beverage
-  def prepare_recipe
-    boil_water
-    brew
-    pour_in_cup
-    add_condiments
-  end
-
   private
 
   def brew
@@ -71,13 +64,6 @@ class Coffee < Beverage
 end
 
 class Tea < Beverage
-  def prepare_recipe
-    boil_water
-    brew
-    pour_in_cup
-    add_condiments
-  end
-
   private
 
   def brew
