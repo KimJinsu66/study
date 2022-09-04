@@ -17,25 +17,12 @@ UNUSE_METHODS="1"
 echo '=================== start ============================='
 grep 'def' $model_file_name | sed -e "s/ .*def//" | sed -e "s/(.*//" | while read -r line;
 do
-#  grep 'describe' $spec_file_name | grep \#$line $spec_file_name | while read test_line;
-#  do
-#    echo $?, $test_line
-#
-#    if [ "$test_line" ]; then
-#      echo $test_line
-#    else
-#      echo methodのテストが存在しません。
-#    fi
-#
-#  done
-
   grep 'describe' $spec_file_name | grep -qE "\#$line|.$line" $spec_file_name
 
   if [ $? -eq "0" ]; then
     UNUSE_METHODS+="${line}1"
-#    echo $?
   else
-    echo $line methodのテストが存在しません。
+    echo $line
   fi
 done
 
