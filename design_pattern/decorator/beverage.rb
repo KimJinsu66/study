@@ -1,5 +1,11 @@
 
 class Beverage
+  attr_accessor :size
+
+  def initialize
+    @size = 'M' # 지금은 String으로 하지만 enum으로 하는 것이 좋을 듯
+  end
+
   def description
     '제목없음'
   end
@@ -15,7 +21,14 @@ class Espresso < Beverage
   end
 
   def cost
-    300
+    case size
+    when 'S'
+      250
+    when 'M'
+      300
+    when 'L'
+      350
+    end
   end
 end
 
@@ -25,15 +38,30 @@ class Decaf < Beverage
   end
 
   def cost
-    500
+    case size
+    when 'S'
+      450
+    when 'M'
+      500
+    when 'L'
+      550
+    end
   end
 end
 
 # =======================================
 
 class CondimentDecorator < Beverage
-  def description
+  attr_reader :beverage
 
+  def initialize(beverage)
+    @beverage = beverage
+
+    freeze
+  end
+
+  def size
+    beverage.size
   end
 end
 
@@ -76,14 +104,19 @@ end
 # main ============================
 
 espresso = Espresso.new
+espresso.size = 'L'
 
-p "메뉴: #{espresso.description}, 가격: #{espresso.cost}"
+p "메뉴: #{espresso.description}, 가격: #{espresso.cost} 사이즈: #{espresso.size}"
+
+espresso.size = 'S'
+p "메뉴: #{espresso.description}, 가격: #{espresso.cost} 사이즈: #{espresso.size}"
 
 decaf = Decaf.new
+decaf.size = 'L'
 decaf = Milk.new(decaf)
 decaf = Mocha.new(decaf)
 
 p decaf.class
 
-p "메뉴: #{decaf.description}, 가격: #{decaf.cost}"
+p "메뉴: #{decaf.description}, 가격: #{decaf.cost} 사이즈: #{decaf.size}"
 
