@@ -5,7 +5,7 @@ class Command
   end
 end
 
-# Class: LightOnCommand
+# Class: Light
 class Light
   def on
     'turn on the light'
@@ -65,4 +65,32 @@ class SimpleRemoteControl
   def button_was_pressed
     p slot.execute
   end
+end
+
+# Class: GarageDoor
+class GarageDoor
+  def open
+    'open the garage door'
+  end
+
+  def close
+    'close the garage door'
+  end
+end
+
+# Class: GarageDoorOpenCommand
+class GarageDoorOpenCommand < Command
+  def initialize(garage_door)
+    @garage_door = garage_door
+
+    freeze
+  end
+
+  def execute
+    garage_door.open
+  end
+
+  private
+
+  attr_reader :garage_door
 end
