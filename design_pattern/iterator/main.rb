@@ -24,7 +24,9 @@ end
 class MenuCollection
   def initialize(collection = [])
     @collection = collection
-  end def iterator
+  end
+
+  def iterator
     MenuOrderIterator.new(@collection)
   end
 
