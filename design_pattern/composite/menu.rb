@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class Menu
+require './menu_component'
+
+class Menu < MenuComponent
   def initialize(name, description)
     @menu_components = []
     @name = name
@@ -16,10 +18,6 @@ class Menu
   # TODO
   def remove; end
 
-  def get_child(index)
-    menu_components[index]
-  end
-
   def print
     p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
     p "メニュー: #{name}"
@@ -29,6 +27,7 @@ class Menu
       menu_components.each do |menu|
         p menu.print
       end
+
       '메뉴 끝, 메뉴 선택 후 벨을 눌러주세요'
     else
       'Menu가 없습니다'

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class MenuItem
+require './menu_component'
+
+class MenuItem < MenuComponent
   def initialize(name, price, description)
     @name = name
     @price = price
