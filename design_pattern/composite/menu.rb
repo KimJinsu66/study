@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 
-# Class: Menu
 class Menu
-  def initialize
+  def initialize(name, description)
     @menu_components = []
     @name = name
     @description = description
@@ -20,11 +20,19 @@ class Menu
     menu_components[index]
   end
 
-  # TODO
   def print
+    p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
     p "メニュー: #{name}"
     p "説明: #{description}"
-    p '===================================='
+
+    unless menu_components.empty?
+      menu_components.each do |menu|
+        p menu.print
+      end
+      '메뉴 끝, 메뉴 선택 후 벨을 눌러주세요'
+    else
+      'Menu가 없습니다'
+    end
   end
 
   private
