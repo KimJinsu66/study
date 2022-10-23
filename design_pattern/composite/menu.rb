@@ -2,6 +2,7 @@
 
 require './menu_component'
 
+# Composite
 class Menu < MenuComponent
   def initialize(name, description)
     @menu_components = []

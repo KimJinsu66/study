@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Component
 class MenuComponent
   def add
     raise NotImplementedError

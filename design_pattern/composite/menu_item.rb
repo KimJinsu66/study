@@ -2,6 +2,7 @@
 
 require './menu_component'
 
+# Leaf
 class MenuItem < MenuComponent
   def initialize(name, price, description)
     @name = name
