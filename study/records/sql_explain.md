@@ -1,7 +1,12 @@
+# SQL関連をまとめる
 
-## SQL関連をまとめる
+# SQL성능을 높이기 위해
 
-### Tableのindex確認
+- 필요한 최소 블록만 읽도록 쿼리를 작성한다
+- 최적의 옵티마이징 팩터를 제공한다
+- 필요하다면 옵티마이저 힌트를 사용해 최적의 액세스 경로로 유도한다
+
+## Tableのindex確認
 
 ```SQL
 SELECT * FROM pg_indexes WHERE tablename = 'table_name';
@@ -18,10 +23,10 @@ EXPLAIN SELECT * FROM t WHERE "table_name" = 'customers' AND record_id IN (1, 3,
 EXPLAIN SELECT * FROM t WHERE "table_name" = 'customers' AND record_id IN (1, 3, 5) LIMIT 1;
 ```
 
-#### TODO 
+### TODO 
 - [ ] もっと多めのレコードをとってLIMITし、性能を確認する
 
-### Selectivity確認
+## Selectivity確認
 
 MySql version
 ```SQL
@@ -62,7 +67,7 @@ SELECT COUNT(*) AS NDV, MAX(CNT) AS MAX_CARD, MIN(CNT) MN_CARD, AVG(CNT) AS AVG_
  ) as timlines;
 ```
 
-### Physical read count
+## Physical read count
 
 ```SQL
 -- Physical read count
