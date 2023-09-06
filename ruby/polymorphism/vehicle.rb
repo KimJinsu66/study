@@ -36,5 +36,13 @@ vehicle.tyre_type
 vehicle = Truck.new
 vehicle.tyre_type
 
+puts "=== polymorphism ==="
 # このように書いてコードを書かなくてもよくなる
-[Vehicle.new, Car.new, Truck.new].each(&:tyre_type)
+[Vehicle.new, Car.new, Truck.new].each(&:tyre_type) # ← このような感じがpolymorphism
+
+puts "=== duck typing ==="
+vehicles = [Vehicle.new, Car.new, Truck.new]
+
+vehicles.each do |t_vehicle|
+  t_vehicle.tyre_type # ← ここが duck typing
+end

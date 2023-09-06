@@ -3,8 +3,8 @@
 # Description/Explanation of NightlyDiscountPhone class
 class AbstractPhone
 
-  def initialize
-    @calls = []
+  def initialize(calls)
+    @calls = calls
   end
 
   def calculate_fee
@@ -17,9 +17,9 @@ class AbstractPhone
     result
   end
 
-  private
+  protected
 
-  def calculate_call_fee(call)
+  def calculate_call_fee(_call)
     raise 'call abstract !'
   end
 end
