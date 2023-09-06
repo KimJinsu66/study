@@ -1,3 +1,5 @@
+# 출처: https://refactoring.guru/ja/design-patterns/strategy/ruby/example
+
 class Context
   attr_writer :strategy
 
