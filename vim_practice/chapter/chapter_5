@@ -1,0 +1,73 @@
+# :6tm.
+        cols="12"
+
+        <v-simple-table>
+# !!! :t. 는 레지스터 사용x
+# @: 마지막 ex mode를 실행시킨다
+
+# A; -> block select -> :normal .
+let foo = 1 : this.jinsuOnForm.,
+let boo = 2 : this.jinsuOnForm.,
+let baz = 3 : this.jinsuOnForm.,
+let foobar = foo + bar : this.jinsuOnForm.,
+let foobarbaz = foo + bar + baz : this.jinsuOnForm.,
+
+let foo = 1
+let boo = 2
+let baz = 3
+let foobar = foo + bar
+let foobarbaz = foo + bar + baz
+
+
+<template>
+    <v-row v-if="isAppointment">
+      <v-col
+      <v-col
+        cols="12"
+        <v-simple-table>
+        sm="6"
+      >
+          <tbody>
+            <tr>
+              <td>初回面談実施者</td>
+              <td>
+              <td>
+              <td>
+              <td>
+                {{ appointment.conducted_user_name }}
+              </td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-col>
+      <v-col>
+        <v-simple-table>
+          <tbody>
+            <tr>
+              <td class="first-td">初回案内日</td>
+              <td class="first-td">
+                {{ appointment.previewed_date }}
+              </td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      appointment: {},
+      dialog: false
+    }
+  },
+  computed: {
+    isAppointment () {
+      return Object.keys(this.appointment).length
+    }
+  }
+}
+</script>
