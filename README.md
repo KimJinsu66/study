@@ -1,7 +1,7 @@
 # 이 디렉토리는?
 공부한 내용을 정리하는 directory
 
-[일본어버젼(추가 예정)]()
+[일본어버젼(추가 예정)](https://github.com/KimJinsu66/study/blob/main/README_JP.md)
 
 ## 언제부터 작성했는가?
 
